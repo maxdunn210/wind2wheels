@@ -3,37 +3,50 @@
   %head
     %meta{charset: "utf-8"}/
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
-    %meta{content: "", name: "description"}/
-    %meta{content: "", name: "author"}/
-    %title Landing Page Template for Bootstrap
+    %meta{content: "Power your electric vehicle and home from wind, not fuel", name: "description"}/
+    %title Wind2Wheels
+
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+
     / Bootstrap core CSS
-    %link{href: "css/bootstrap.css", rel: "stylesheet"}/
+    -#%link{href: "css/bootstrap.css", rel: "stylesheet"}/
     / Custom Google Web Font
-    %link{href: "font-awesome/css/font-awesome.min.css", rel: "stylesheet"}/
-    %link{href: "http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic", rel: "stylesheet", type: "text/css"}/
+    -#%link{href: "font-awesome/css/font-awesome.min.css", rel: "stylesheet"}/
+    -#%link{href: "http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic", rel: "stylesheet", type: "text/css"}/
     / Add custom CSS here
-    %link{href: "css/landing-page.css", rel: "stylesheet"}/
+    -#%link{href: "css/landing_page.css", rel: "stylesheet"}/
+
   %body
-    %nav.navbar.navbar-default.navbar-fixed-top{role: "navigation"}
-      .container
-        .navbar-header
-          %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand{href: "http://startbootstrap.com"} Start Bootstrap
-        / Collect the nav links, forms, and other content for toggling
-        .collapse.navbar-collapse.navbar-right.navbar-ex1-collapse
-          %ul.nav.navbar-nav
-            %li
-              %a{href: "#about"} About
-            %li
-              %a{href: "#services"} Services
-            %li
-              %a{href: "#contact"} Contact
-        / /.navbar-collapse
-      / /.container
+    -#%nav.navbar.navbar-default.navbar-fixed-top{role: "navigation"}
+    -#  .container
+    -#    .navbar-header
+    -#      %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+    -#        %span.sr-only
+    -#        -#%span.sr-only Toggle navigation
+    -#        %span.icon-bar
+    -#        %span.icon-bar
+    -#        %span.icon-bar
+    -#      %a.navbar-brand{href: "http://wind2wheels.com"}
+    -#        %img{src: 'assets/w2w_logo.png'}
+    -#    / Collect the nav links, forms, and other content for toggling
+    -#    .collapse.navbar-collapse.navbar-right.navbar-ex1-collapse
+    -#      %ul.nav.navbar-nav
+    -#        %li
+    -#          %a{href: "#about"} About
+    -#        %li
+    -#          %a{href: "#services"} Services
+    -#        %li
+    -#          %a{href: "#contact"} Contact
+    -#    / /.navbar-collapse
+    -#  / /.container
+
+
+
+
+
+
+
     .intro-header
       .container
         .row
@@ -72,7 +85,7 @@
               %a{href: "http://join.deathtothestockphoto.com/", target: "_blank"} Visit their website
               to become a member.
           .col-lg-5.col-lg-offset-2.col-sm-6
-            %img.img-responsive{alt: "", src: "img/ipad.png"}/
+            %img.img-responsive{alt: "", src: "assets/ipad.png"}/
       / /.container
     / /.content-section-a
     .content-section-b
@@ -90,7 +103,7 @@
               %a{href: "http://www.psdcovers.com/", target: "_blank"} Visit their website
               to download some of their awesome, free photoshop actions!
           .col-lg-5.col-sm-pull-6.col-sm-6
-            %img.img-responsive{alt: "", src: "img/doge.png"}/
+            %img.img-responsive{alt: "", src: "assets/doge.png"}/
       / /.container
     / /.content-section-b
     .content-section-a
@@ -110,7 +123,7 @@
               = succeed "." do
                 %a{href: "http://fontawesome.io", target: "_blank"} icons from Font Awesome
           .col-lg-5.col-lg-offset-2.col-sm-6
-            %img.img-responsive{alt: "", src: "img/phones.png"}/
+            %img.img-responsive{alt: "", src: "assets/phones.png"}/
       / /.container
     / /.content-section-a
     .banner
@@ -150,59 +163,8 @@
               %li.footer-menu-divider ⋅
               %li
                 %a{href: "#contact"} Contact
-            %p.copyright.text-muted.small Copyright © Your Company 2013. All Rights Reserved
-    / JavaScript
-    %script{src: "js/jquery-1.10.2.js"}
-    %script{src: "js/bootstrap.js"}
+            %p.copyright.text-muted.small Copyright © Wind2Wheels 2014. All Rights Reserved
 
-
-
-
-%p#notice= notice
-
-%p
-  %b Name:
-  = @car.name
-%p
-  %b Year:
-  = @car.year
-%p
-  %b Make:
-  = @car.make
-%p
-  %b Model:
-  = @car.model
-%p
-  %b Color:
-  = @car.color
-%p
-  %b License plate:
-  = @car.license_plate
-%p
-  %b Vin:
-  = @car.vin
-%p
-  %b Battery kwh:
-  = @car.battery_kwh
-%p
-  %b Charging rate kw:
-  = @car.charging_rate_kw
-%p
-  %b Kwh per 100 miles.integer:
-  = @car.kwh_per_100_miles.integer
-%p
-  %b Carwings:
-  = @car.carwings_id
-%p
-  %b Carwings password:
-  = @car.carwings_password
-%p
-  %b Full charge time:
-  = @car.full_charge_time
-%p
-  %b Note:
-  = @car.note
-
-= link_to 'Edit', edit_car_path(@car)
-\|
-= link_to 'Back', cars_path
+    -#/ JavaScript
+    -#%script{src: "js/jquery-1.10.2.js"}
+    -#%script{src: "js/bootstrap.js"}
