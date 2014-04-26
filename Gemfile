@@ -1,18 +1,18 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 
-# (1) Find location of 'pg_config' file using => sudo find / -name 'pg_config'
-#     Response => /Library/PostgreSQL/9.0/bin/pg_config
-# (2) Install using => gem install pg -- --with-pg-config='PATH_TO_YOUR_PG_CONFIG'
-#     i.e., => gem install pg -- --with-pg-config='/Library/PostgreSQL/9.0/bin/pg_config'
-# (3) Restart => pg_ctl -D /usr/local/opt/postgres restart
 group :production do
+  # (1) Find location of 'pg_config' file using => sudo find / -name 'pg_config'
+  #     Response => /Library/PostgreSQL/9.0/bin/pg_config
+  # (2) Install using => gem install pg -- --with-pg-config='PATH_TO_YOUR_PG_CONFIG'
+  #     i.e., => gem install pg -- --with-pg-config='/Library/PostgreSQL/9.0/bin/pg_config'
+  # (3) Restart => pg_ctl -D /usr/local/opt/postgres restart
   gem 'pg'
+  gem 'rails_12factor'  # Heroku; to precompile assets
+  gem 'rails_serve_static_assets'
 end
-
 
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
