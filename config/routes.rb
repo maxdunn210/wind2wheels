@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :cars
 
   get 'utilities' => 'utilities#index'
-  get 'car_app' => 'car_app#index'
+  get 'car_app' => 'cars#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

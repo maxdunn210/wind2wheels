@@ -10,7 +10,7 @@ one:
   vin: MyString
   battery_kwh: 1
   charging_rate_kw: 1.5
-  kwh_per_100_miles.integer: MyString
+  kwh_per_100_miles: MyString
   carwings_id: MyString
   carwings_password: MyString
   full_charge_time: 2014-04-26 09:51:23
@@ -26,7 +26,7 @@ two:
   vin: MyString
   battery_kwh: 1
   charging_rate_kw: 1.5
-  kwh_per_100_miles.integer: MyString
+  kwh_per_100_miles: MyString
   carwings_id: MyString
   carwings_password: MyString
   full_charge_time: 2014-04-26 09:51:23
