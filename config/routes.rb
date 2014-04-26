@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :cars
-  get 'utility' => 'utility#index'
+
+  get 'utilities' => 'utilities#index'
   get 'car_app' => 'car_app#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
