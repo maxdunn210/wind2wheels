@@ -14,3 +14,17 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+## PSB stuff below
+
+# Ignore .DS-Store
+.DS_Store
+
+# CANNOT IGNORE FOR HEROKU; Ignore Gemfile.lock config
+# /Gemfile.lock
+
+# Ignore the database schema.
+/db/schema.rb
+
+# Ignore RubyMine config files.
+/.idea
