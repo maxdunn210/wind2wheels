@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 
@@ -16,7 +18,6 @@ end
 
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-
 
 gem 'thin'                # Use thin instead of Webrick,
                             # makes 'Could not determine content-length of response body' warnings disappear;
