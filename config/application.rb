@@ -23,6 +23,7 @@ module Wind2wheels
 
     # PSB: Required for Heroku deployment; config/application.rb - NOT production.rb
     config.assets.initialize_on_precompile = false
+    config.serve_static_assets = true
 
   end
 end
