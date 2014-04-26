@@ -16,7 +16,7 @@ gem 'thin'                # Use thin instead of Webrick,
                             # also works with Heroku.
 
 gem 'haml-rails'                    # Required for 'HAML' generator
-gem 'bootstrap-sass', '~> 2.3.0.0'  # Remember to require bootstrap in application.js "//= require bootstrap"
+gem 'bootstrap-sass', '~> 3.1.1.1'  # Remember to require bootstrap in application.js "//= require bootstrap"
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 

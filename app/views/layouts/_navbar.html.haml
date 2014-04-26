@@ -1,65 +1,24 @@
 .nav.navbar.navbar-default.navbar-fixed-top{role: "navigation"}
-  .container
+  .container-fluid
     .navbar-header
       %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
-        %span.sr-only
-        -#%span.sr-only Toggle navigation
+        %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
       %a.navbar-brand{href: "http://wind2wheels.com"}
-        %img{src: 'assets/w2w_logo.png'}
-    / Collect the nav links, forms, and other content for toggling
-    .collapse.navbar-collapse.navbar-right.navbar-ex1-collapse
-      %ul.nav.navbar-nav
-        %li
-          %a{href: "#"} About
-        %li
-          %a{href: "#"} Services
-        %li
-          %a{href: "#"} Contact
-    / /.navbar-collapse
-  / /.container
-
-
--#.navbar.navbar-fixed-top
--#  .navbar-inner
--#    .container
--#      %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
--#        %span.icon-bar
--#        %span.icon-bar
--#        %span.icon-bar
-
-      -#- unless current_page?(root_path)
-      -#- if Tenant.where(:domain => request.domain).exists?
-      -#  %a.brand{:href => root_path} #{tenant_brand}
-      -#- elsif user_signed_in?
-      -#  %a.brand{:href => root_path} #{current_user.tenant.brand}
-
-      -#%a.brand{:href => root_path} #{tenant_brand}
-
-      .nav-collapse.collapse
-        %ul.nav
+        %img{src: 'assets/w2w_logo_nav.png'}
+      / Collect the nav links, forms, and other content for toggling
+      .collapse.navbar-collapse.navbar-right.navbar-ex1-collapse
+        %ul.nav.navbar-nav
           %li
-            %a{:href => root_path}
-              %i.icon-home.icon-gray
-              Home
-            -#= link_to "<i class=\"icon-home\"></i> Home".html_safe, root_path
+            %a{href: "#"} About
           %li
-            %a{:href => how_it_works_path}
-              %i.icon-hand-right.icon-gray
-              How it works
-            -#= link_to "<i class=\"icon-hand-right\"></i> How it works".html_safe, how_it_works_path
+            %a{href: "#"} Services
+          %li
+            %a{href: "#"} Contact
+      / /.navbar-collapse
+    / /.container
 
-        -#  = render 'layouts/navbar_more_dropdown_partial'
-        -#
-        -#- if current_user.blank?
-        -#  - if current_page?(new_user_registration_path)
-        -#  - else
-        -#
-        -#    = render 'layouts/navbar_sign_in_form_dropdown'
-        -#
-        -#- else
-        -#
-        -#  = render 'layouts/navbar_user_dropdown_partial'
+
 
