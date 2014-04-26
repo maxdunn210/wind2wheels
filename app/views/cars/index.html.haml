@@ -1,0 +1,45 @@
+%h1 Listing cars
+
+%table
+  %tr
+    %th Name
+    %th Year
+    %th Make
+    %th Model
+    %th Color
+    %th License plate
+    %th Vin
+    %th Battery kwh
+    %th Charging rate kw
+    %th Kwh per 100 miles.integer
+    %th Carwings
+    %th Carwings password
+    %th Full charge time
+    %th Note
+    %th
+    %th
+    %th
+
+  - @cars.each do |car|
+    %tr
+      %td= car.name
+      %td= car.year
+      %td= car.make
+      %td= car.model
+      %td= car.color
+      %td= car.license_plate
+      %td= car.vin
+      %td= car.battery_kwh
+      %td= car.charging_rate_kw
+      %td= car.kwh_per_100_miles.integer
+      %td= car.carwings_id
+      %td= car.carwings_password
+      %td= car.full_charge_time
+      %td= car.note
+      %td= link_to 'Show', car
+      %td= link_to 'Edit', edit_car_path(car)
+      %td= link_to 'Destroy', car, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Car', new_car_path

@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  year: MyString
+  make: MyString
+  model: MyString
+  color: MyString
+  license_plate: MyString
+  vin: MyString
+  battery_kwh: 1
+  charging_rate_kw: 1.5
+  kwh_per_100_miles.integer: MyString
+  carwings_id: MyString
+  carwings_password: MyString
+  full_charge_time: 2014-04-26 09:51:23
+  note: MyText
+
+two:
+  name: MyString
+  year: MyString
+  make: MyString
+  model: MyString
+  color: MyString
+  license_plate: MyString
+  vin: MyString
+  battery_kwh: 1
+  charging_rate_kw: 1.5
+  kwh_per_100_miles.integer: MyString
+  carwings_id: MyString
+  carwings_password: MyString
+  full_charge_time: 2014-04-26 09:51:23
+  note: MyText

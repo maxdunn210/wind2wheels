@@ -1,0 +1,48 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @car.name
+%p
+  %b Year:
+  = @car.year
+%p
+  %b Make:
+  = @car.make
+%p
+  %b Model:
+  = @car.model
+%p
+  %b Color:
+  = @car.color
+%p
+  %b License plate:
+  = @car.license_plate
+%p
+  %b Vin:
+  = @car.vin
+%p
+  %b Battery kwh:
+  = @car.battery_kwh
+%p
+  %b Charging rate kw:
+  = @car.charging_rate_kw
+%p
+  %b Kwh per 100 miles.integer:
+  = @car.kwh_per_100_miles.integer
+%p
+  %b Carwings:
+  = @car.carwings_id
+%p
+  %b Carwings password:
+  = @car.carwings_password
+%p
+  %b Full charge time:
+  = @car.full_charge_time
+%p
+  %b Note:
+  = @car.note
+
+= link_to 'Edit', edit_car_path(@car)
+\|
+= link_to 'Back', cars_path
