@@ -9,9 +9,8 @@ gem 'rails', '4.1.0'
 # (2) Install using => gem install pg -- --with-pg-config='PATH_TO_YOUR_PG_CONFIG'
 #     i.e., => gem install pg -- --with-pg-config='/Library/PostgreSQL/9.0/bin/pg_config'
 # (3) Restart => pg_ctl -D /usr/local/opt/postgres restart
-group :production do
-  gem 'pg'
-end
+gem 'pg'
+
 
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
