@@ -22,7 +22,6 @@ module Wind2wheels
     # config.i18n.default_locale = :de
 
     # PSB: Required for Heroku deployment; config/application.rb - NOT production.rb
-    config.assets.initialize_on_precompile = false
     config.serve_static_assets = true
 
   end
