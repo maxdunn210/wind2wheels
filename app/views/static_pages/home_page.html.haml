@@ -39,7 +39,7 @@
             %a{href: "http://join.deathtothestockphoto.com/", target: "_blank"} Visit their website
             to become a member.
         .col-lg-5.col-lg-offset-2.col-sm-6
-          %img.img-responsive{alt: "", src: "assets/ipad.png"}/
+          = image_tag(image_path('ipad.png'), class: 'img-responsive')
     / /.container
   / /.content-section-a
   .content-section-b
@@ -57,7 +57,7 @@
             %a{href: "http://www.psdcovers.com/", target: "_blank"} Visit their website
             to download some of their awesome, free photoshop actions!
         .col-lg-5.col-sm-pull-6.col-sm-6
-          %img.img-responsive{alt: "", src: "assets/doge.png"}/
+          = image_tag(image_path('doge.png'), class: 'img-responsive')
     / /.container
   / /.content-section-b
   .content-section-a
@@ -77,7 +77,7 @@
             = succeed "." do
               %a{href: "http://fontawesome.io", target: "_blank"} icons from Font Awesome
         .col-lg-5.col-lg-offset-2.col-sm-6
-          %img.img-responsive{alt: "", src: "assets/phones.png"}/
+          = image_tag(image_path('phones.png'), class: 'img-responsive')
     / /.container
   / /.content-section-a
   .banner
