@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 
@@ -10,7 +9,6 @@ gem 'rails', '4.1.0'
 #     i.e., => gem install pg -- --with-pg-config='/Library/PostgreSQL/9.0/bin/pg_config'
 # (3) Restart => pg_ctl -D /usr/local/opt/postgres restart
 gem 'pg'
-
 
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
