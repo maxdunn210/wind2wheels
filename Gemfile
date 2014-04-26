@@ -14,6 +14,13 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
+gem 'thin'                # Use thin instead of Webrick,
+                            # makes 'Could not determine content-length of response body' warnings disappear;
+                            # also works with Heroku.
+
+gem 'haml-rails'                    # Required for 'HAML' generator
+gem 'bootstrap-sass', '~> 2.3.0.0'  # Remember to require bootstrap in application.js "//= require bootstrap"
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
