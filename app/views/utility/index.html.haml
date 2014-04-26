@@ -1,0 +1,63 @@
+%link{href: "https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css", rel: "stylesheet"}/
+%script{src: "https://code.jquery.com/ui/1.10.4/jquery-ui.js"}
+%script{src: "https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"}
+%script{src: "https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"}
+
+/ Page
+.container
+  / Utility data
+  .bs-docs-section
+    .row
+      .col-lg-12
+        .page-header
+          %h1#forms Utility data
+      .col-lg-12
+        %label{for: "amount"} Price of kWh:
+        %input#amount{style: "border:0; color:#f6931f; font-weight:bold;", type: "text"}/
+        #slider-price
+      .col-lg-12
+        %label{for: "amount"} Wind on :
+        %input#check{type: "checkbox"}/
+        %label{for: "check"}
+  / Car data
+  .bs-docs-section
+    .row
+      .col-lg-12
+        .page-header
+          %h1#forms Car data
+      .col-lg-12
+        %label{for: "amount"} Time before full charge :
+        %input#fullcharge{style: "border:0; color:#f6931f; font-weight:bold;", type: "text"}/
+      .col-lg-12
+        %label{for: "fullbatt"} kWh needed for full battery :
+        %input#fullbatt{style: "border:0; color:#f6931f; font-weight:bold;", type: "text"}/
+        #slider-fullbatt
+:javascript
+  $(function() {
+
+   $( "#slider-price" ).slider({
+      range: "min",
+      value: 20,
+      min: 0,
+      max: 35,
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$ " + ui.value +"cts");
+      }
+    });
+
+    $( "#amount" ).val( "$ " + $( "#slider-price" ).slider( "value" )+"cts" );
+
+       $( "#slider-fullbatt" ).slider({
+      range: "min",
+      value: 10,
+      min: 0,
+      max: 20,
+      slide: function( event, ui ) {
+        $( "#fullbatt" ).val(ui.value +"kWh");
+      }
+    });
+    $( "#fullbatt" ).val( $( "#slider-fullbatt" ).slider( "value" )+"kWh" );
+
+    var timefullcharge= "1:00";
+    $( "#fullcharge" ).val( timefullcharge );
+  });

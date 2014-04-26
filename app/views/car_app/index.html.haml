@@ -1,0 +1,15 @@
+.container
+  .bs-docs-section
+    .row
+      .col-lg-12
+        #ajax
+          = render 'charging'
+
+:javascript
+
+  setInterval(function(){
+    $.get("/car_app/charging", function(data){
+      $("#ajax").html(data);
+    },
+    "html")
+  }, 1000);
