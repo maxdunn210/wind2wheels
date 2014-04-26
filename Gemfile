@@ -10,7 +10,8 @@ group :production do
   #     i.e., => gem install pg -- --with-pg-config='/Library/PostgreSQL/9.0/bin/pg_config'
   # (3) Restart => pg_ctl -D /usr/local/opt/postgres restart
   gem 'pg'
-  gem 'rails_12factor'
+  gem 'rails_12factor'  # Heroku; to precompile assets
+  gem 'rails_serve_static_assets'
 end
 
 gem 'uglifier', '>= 1.3.0'
