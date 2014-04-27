@@ -1,12 +1,12 @@
 .container
   .center
-    .row-fluid
+    %h2.section-heading
       = @car.name
 
     .row-fluid
-      Car charge deadline (24-hour time)
+      &nbsp;
 
-    .row_fluid
+    .row_fluid.app
       = form_for @car do |f|
         - if @car.errors.any?
           #error_explanation
@@ -15,20 +15,26 @@
               - @car.errors.full_messages.each do |msg|
                 %li= msg
 
-        .field
-          = f.label :time
-          -#= c.time_field(:charge, :target_end)
-          = time_select(:car, :charge_end_time, :ampm => true, :minute_step => 15)
+        .field.app
+          Car charged at
+          = f.time_field(:charge_end_time, :ampm => true, :minute_step => 15)
+
+        .field.app
+          Charging rate kw:
+          = f.select(:charging_rate_kw, [['1.2kw', 1.2],['3.3kw', 3.8], ['6.6kw', 6.6], ['10kw', 10]], {}, {class: 'big-select'})
+
+        .field.app
+          Carwings username:
+          = f.text_field(:carwings_id)
+
+        .field.app
+          Carwings password:
+          = f.password_field(:carwings_password)
 
         .actions
-          = f.submit 'Save'
+          = f.submit 'Ok', class: 'big-button'
 
     .row-fluid
-
-
-
-
-
 
 
     .bs-docs-section
@@ -37,39 +43,8 @@
           #ajax
             = render 'charging'
 
-
-  %p#notice= notice
-
-  %p
-    %b Name:
-    = @car.name
-  %p
-    %b Year:
-    = @car.year
-  %p
-    %b Make:
-    = @car.make
-  %p
-    %b Model:
-    = @car.model
-  %p
-    %b Color:
-    = @car.color
-  %p
-    %b License plate:
-    = @car.license_plate
-  %p
-    %b Vin:
-    = @car.vin
-  %p
-    %b Battery kwh:
-    = @car.battery_kwh
-  %p
     %b Charging rate kw:
     = @car.charging_rate_kw
-  %p
-    %b Kwh per 100 miles:
-    = @car.kwh_per_100_miles
   %p
     %b Carwings:
     = @car.carwings_id
@@ -81,17 +56,7 @@
     %b Target charge end time:
     = @car.charge_end_time
 
-  %p
-    %b Full charge time:
-    = @car.full_charge_time
-  %p
-    %b Note:
-    = @car.note
-
   = link_to 'Edit', edit_car_path(@car)
-  \|
-  = link_to 'Back', cars_path
-
 
 
 :javascript

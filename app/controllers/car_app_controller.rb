@@ -1,7 +1,8 @@
 class CarAppController < ApplicationController
 
   def index
-    @charging = true
+    @charging = session[:charger_on]
+    @car = Car.first
   end
 
   def charging
