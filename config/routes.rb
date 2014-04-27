@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'car_app' => 'car_app#index'
   get 'car_app/charging' => 'car_app#charging'
 
+  get 'about_us' => 'static_pages#about_us'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
