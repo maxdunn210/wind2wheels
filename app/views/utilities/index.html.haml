@@ -43,7 +43,7 @@
       max: 35,
       slide: function( event, ui ) {
         $( "#amount" ).val("$ " + ui.value +"cts");
-        $.post('/utility/change/', {price_per_kwh: ui.value});
+        $.post('/utilities/change/', {price_per_kwh: ui.value});
       }
     });
     $( "#amount" ).val( "$ " + $( "#slider-price" ).slider( "value" )+"cts" );
@@ -55,7 +55,7 @@
       max: 20,
       slide: function( event, ui ) {
         $( "#fullbatt" ).val(ui.value +"kWh");
-        $.post('/utility/change/', {kwh_to_full: ui.value});
+        $.post('/utilities/change/', {kwh_to_full: ui.value});
       }
     });
     $( "#fullbatt" ).val( $( "#slider-fullbatt" ).slider( "value" )+"kWh" );
@@ -64,6 +64,6 @@
     $( "#fullcharge" ).val( timefullcharge );
 
     $( "#wind" ).change( function() {
-       $.post('/utility/change/', {wind_on: $( "#wind" ).is(':checked') });
+       $.post('/utilities/change/', {wind_on: $( "#wind" ).is(':checked') });
     })
   });

@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :cars
-  get 'utility' => 'utility#index'
-  post 'utility/change' => 'utility#change'
+  get 'utilities' => 'utilities#index'
+  post 'utilities/change' => 'utilities#change'
 
   get 'car_app' => 'car_app#index'
   get 'car_app/charging' => 'car_app#charging'
