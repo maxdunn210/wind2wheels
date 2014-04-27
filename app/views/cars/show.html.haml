@@ -15,21 +15,39 @@
               - @car.errors.full_messages.each do |msg|
                 %li= msg
 
-        .field.app
-          Car charged at
-          = f.time_field(:charge_end_time, :ampm => true, :minute_step => 15)
+        %div
+          %table.field-table.center
+            %tr
+              %td
+                .label.app
+                  Car charged at
+              %td
+                .field.app
+                  = f.time_field(:charge_end_time, :ampm => true, :minute_step => 15)
 
-        .field.app
-          Charging rate kw:
-          = f.select(:charging_rate_kw, [['1.2kw', 1.2],['3.3kw', 3.8], ['6.6kw', 6.6], ['10kw', 10]], {}, {class: 'big-select'})
+            %tr
+              %td
+                .label.app
+                  Charging rate kw:
+              %td
+                .field.app
+                  = f.select(:charging_rate_kw, [['1.2kw', 1.2],['3.3kw', 3.8], ['6.6kw', 6.6], ['10kw', 10]], {}, {class: 'big-select'})
 
-        .field.app
-          Carwings username:
-          = f.text_field(:carwings_id)
+            %tr
+              %td
+                .label.app
+                  Carwings username:
+              %td
+                .field.app
+                  = f.text_field(:carwings_id)
 
-        .field.app
-          Carwings password:
-          = f.password_field(:carwings_password)
+            %tr
+              %td
+                .label.app
+                  Carwings password:
+              %td
+                .field.app
+                  = f.password_field(:carwings_password)
 
         .actions
           = f.submit 'Ok', class: 'big-button'
