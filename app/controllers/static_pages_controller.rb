@@ -4,4 +4,7 @@ class StaticPagesController < ApplicationController
     @tenant_brand = Tenant.where(domain: request.domain).first.brand rescue "Varimetrics" # For title
   end
 
+  def about_us
+  end
+
 end

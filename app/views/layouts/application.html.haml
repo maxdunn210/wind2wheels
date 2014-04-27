@@ -16,7 +16,14 @@
     %link{:href => "/assets/apple-touch-icon-120x120.png", :rel => "apple-touch-icon-precomposed"}/
 
   %body
+    .wrapper
+      = render 'layouts/navbar'
+      = yield
 
-    = render 'layouts/navbar'
+  %footer
+    .container
+      .row
+        .col-lg-12
+          %p.copyright.text-muted.small Copyright © Wind2Wheels 2014. All Rights Reserved
 
-    = yield
+

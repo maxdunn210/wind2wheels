@@ -145,7 +145,8 @@ body, h1, h2, h3, h4, h5, h6 {
 
 footer {
 	background-color: #f8f8f8;
-	padding: 50px 0;
+	padding-bottom: 10px;
+    height: 40px; /* .push must be the same height as .footer */
 }
 
 p.copyright {
@@ -156,7 +157,12 @@ p.copyright {
   padding-top: 0px;
 }
 
-.navbar {
-  min-height: 61px;
-  background-color: white;
+* {
+  margin: 0;
+}
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -40px; /* the bottom margin is the negative value of the footer's height */
 }
