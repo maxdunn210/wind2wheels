@@ -10,6 +10,7 @@
         %label{for: "amount"} Price of kWh:
         %input#amount{style: "border:0; color:#f6931f; font-weight:bold;", type: "text"}/
         #slider-price
+      %br
       .col-lg-12
         %label{for: "amount"} Wind on :
         %input#wind{type: "checkbox"}/
@@ -20,9 +21,9 @@
       .col-lg-12
         .page-header
           %h1#forms Car data
-      .col-lg-12
-        %label{for: "amount"} Time before full charge :
-        %input#fullcharge{style: "border:0; color:#f6931f; font-weight:bold;", type: "text"}/
+      -#.col-lg-12
+      -#  %label{for: "amount"} Time before full charge :
+      -#  %input#fullcharge{style: "border:0; color:#f6931f; font-weight:bold;", type: "text"}/
       .col-lg-12
         %label{for: "fullbatt"} kWh needed for full battery :
         %input#fullbatt{style: "border:0; color:#f6931f; font-weight:bold;", type: "text"}/
