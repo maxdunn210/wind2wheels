@@ -10,4 +10,9 @@ class CarAppController < ApplicationController
     render partial: 'car_app/charging'
   end
 
+  def charging_small
+    @charging = session[:charger_on]
+    render partial: 'car_app/charging_small'
+  end
+
 end

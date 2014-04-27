@@ -4,7 +4,8 @@
       %td
         = @car.name
       %td
-        = render 'charging_small'
+        #ajax
+          = render 'car_app/charging_small'
 
     .row-fluid
       &nbsp;
@@ -50,9 +51,18 @@
 
 :javascript
 
-  setInterval(function(){
-    $.get("/car_app/charging", function(data){
-      $("#ajax").html(data);
-    },
-    "html")
-  }, 3000);
+  function update() {
+  $.ajax({
+      type: 'GET',
+      url: '/car_app/charging_small',
+      timeout: 2000,
+      success: function(data) {
+        if ($('#ajax').length) {
+          $('#ajax').html(data);
+          window.setTimeout(update, 2000);
+        }
+      }
+    });
+  }
+  update();
+

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get 'car_app' => 'car_app#index'
   get 'car_app/charging' => 'car_app#charging'
+  get 'car_app/charging_small' => 'car_app#charging_small'
 
   get 'about_us' => 'static_pages#about_us'
 
