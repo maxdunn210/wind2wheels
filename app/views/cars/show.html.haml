@@ -1,7 +1,10 @@
 .container
   .center
-    %h2.section-heading
-      = @car.name
+    %h2.page-header.w2w-header
+      %td
+        = @car.name
+      %td
+        = render 'charging_small'
 
     .row-fluid
       &nbsp;
@@ -39,7 +42,7 @@
       .actions
         = f.submit 'Ok', class: 'big-button'
 
-    .row-fluid
+    .row-fluid.app
       You saved 82 lbs of CO2!
 
 
