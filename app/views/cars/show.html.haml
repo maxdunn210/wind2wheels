@@ -6,75 +6,42 @@
     .row-fluid
       &nbsp;
 
-    .row_fluid.app
-      = form_for @car do |f|
-        - if @car.errors.any?
-          #error_explanation
-            %h2= "#{pluralize(@car.errors.count, "error")} prohibited this from being saved:"
-            %ul
-              - @car.errors.full_messages.each do |msg|
-                %li= msg
+    = form_for @car do |f|
+      - if @car.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@car.errors.count, "error")} prohibited this from being saved:"
+          %ul
+            - @car.errors.full_messages.each do |msg|
+              %li= msg
 
-        %div
-          %table.field-table.center
-            %tr
-              %td
-                .label.app
-                  Car charged at
-              %td
-                .field.app
-                  = f.time_field(:charge_end_time, :ampm => true, :minute_step => 15)
+      .row_fluid.app
+        .field.app
+          Car charged by
 
-            %tr
-              %td
-                .label.app
-                  Charging rate kw:
-              %td
-                .field.app
-                  = f.select(:charging_rate_kw, [['1.2kw', 1.2],['3.3kw', 3.8], ['6.6kw', 6.6], ['10kw', 10]], {}, {class: 'big-select'})
+      .row_fluid.app
+        .field.app
+          = f.time_field(:charge_end_time, :ampm => true, :minute_step => 15)
 
-            %tr
-              %td
-                .label.app
-                  Carwings username:
-              %td
-                .field.app
-                  = f.text_field(:carwings_id)
+      .row_fluid.app
+        &nbsp;
 
-            %tr
-              %td
-                .label.app
-                  Carwings password:
-              %td
-                .field.app
-                  = f.password_field(:carwings_password)
+      .row_fluid.app
+        .field.app
+          Charging rate kw
 
-        .actions
-          = f.submit 'Ok', class: 'big-button'
+      .row_fluid.app
+        .field.app
+          = f.select(:charging_rate_kw, [['1.2kw', 1.2],['3.3kw', 3.8], ['6.6kw', 6.6], ['10kw', 10]])
+
+      .row_fluid.app
+        &nbsp;
+
+      .actions
+        = f.submit 'Ok', class: 'big-button'
 
     .row-fluid
-
-
-    .bs-docs-section
-      .row
-        .col-lg-12
-          #ajax
-            = render 'charging'
-
-    %b Charging rate kw:
-    = @car.charging_rate_kw
-  %p
-    %b Carwings:
-    = @car.carwings_id
-  %p
-    %b Carwings password:
-    = @car.carwings_password
-
-  %p
-    %b Target charge end time:
-    = @car.charge_end_time
-
-  = link_to 'Edit', edit_car_path(@car)
+      %
+        You saved 82 lbs of CO2!
 
 
 :javascript
