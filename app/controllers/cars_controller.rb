@@ -10,6 +10,8 @@ class CarsController < ApplicationController
   # GET /cars/1
   # GET /cars/1.json
   def show
+    @car = Car.first
+    @charging = true
   end
 
   # GET /cars/new
@@ -61,6 +63,17 @@ class CarsController < ApplicationController
     end
   end
 
+
+  def index
+    @charging = true
+  end
+
+  def charging
+    @charging = true
+    render partial: 'cars/charging'
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_car
@@ -69,6 +82,6 @@ class CarsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def car_params
-      params.require(:car).permit(:name, :year, :make, :model, :color, :license_plate, :vin, :battery_kwh, :charging_rate_kw, :kwh_per_100_miles.integer, :carwings_id, :carwings_password, :full_charge_time, :note)
+      params.require(:car).permit(:name, :year, :make, :model, :color, :license_plate, :vin, :battery_kwh, :charging_rate_kw, :kwh_per_100_miles, :carwings_id, :carwings_password, :full_charge_time, :note)
     end
 end

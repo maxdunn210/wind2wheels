@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    <title>wind2wheels - Third party simulation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="css/bootswatch.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    
+ 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+ 	<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="js/bootstrap.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+
+  </head>
+  <body>
+  	 
+      	<!-- Page -->
+    
+    <div class="container">
+
+    	<!-- Utility data -->
+      <div class="bs-docs-section">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="forms">Utility data</h1>
+            </div>
+          </div>
+	
+  <div class="col-lg-12">
+  <label for="amount">Price of kWh:</label>
+
+  <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;">
+
+ <div id="slider-price"> </div>
+</div>
+  <div class="col-lg-12">
+  <label for="amount">Wind on :   </label>
+  <input type="checkbox" id="check"><label for="check"></label>
+  
+</div>
+</div>
+</div>
+
+<!-- Car data -->
+
+      <div class="bs-docs-section">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="forms">Car data</h1>
+            </div>
+          </div>
+	
+  <div class="col-lg-12">
+  <label for="amount">Time before full charge :</label>
+<input type="text" id="fullcharge" style="border:0; color:#f6931f; font-weight:bold;">
+
+
+
+</div>
+  <div class="col-lg-12">
+  <label for="fullbatt">kWh needed for full battery :</label>
+
+  <input type="text" id="fullbatt" style="border:0; color:#f6931f; font-weight:bold;">
+
+ <div id="slider-fullbatt"></div>
+</div>
+</div>
+</div>
+
+
+</div>
+    <script>
+  $(function() {
+
+   $( "#slider-price" ).slider({
+      range: "min",
+      value: 20,
+      min: 0,
+      max: 35,
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$ " + ui.value +"cts");
+      }
+    });
+    
+    $( "#amount" ).val( "$ " + $( "#slider-price" ).slider( "value" )+"cts" );
+    
+       $( "#slider-fullbatt" ).slider({
+      range: "min",
+      value: 10,
+      min: 0,
+      max: 20,
+      slide: function( event, ui ) {
+        $( "#fullbatt" ).val(ui.value +"kWh");
+      }
+    });
+    $( "#fullbatt" ).val( $( "#slider-fullbatt" ).slider( "value" )+"kWh" );
+    
+    var timefullcharge= "1:00";
+    $( "#fullcharge" ).val( timefullcharge );
+  });
+  
+  
+  </script>
+  
+  
+  
+
+  <script src="js/bootstrap.js"></script>
+  
+      <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
