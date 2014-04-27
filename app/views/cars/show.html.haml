@@ -31,7 +31,7 @@
 
       .row_fluid.app
         .field.app
-          = f.select(:charging_rate_kw, [['1.2kw', 1.2],['3.3kw', 3.8], ['6.6kw', 6.6], ['10kw', 10]])
+          = f.select(:charging_rate_kw, [['1.2kw', 1.2],['3.3kw', 3.8], ['6.6kw', 6.6], ['10kw', 10]], {}, {class: 'big-select'})
 
       .row_fluid.app
         &nbsp;
@@ -40,8 +40,7 @@
         = f.submit 'Ok', class: 'big-button'
 
     .row-fluid
-      %
-        You saved 82 lbs of CO2!
+      You saved 82 lbs of CO2!
 
 
 :javascript
