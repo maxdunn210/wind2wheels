@@ -7,9 +7,18 @@
 
 :javascript
 
-  setInterval(function(){
-    $.get("/car_app/charging", function(data){
-      $("#ajax").html(data);
-    },
-    "html")
-  }, 1000);
+  function update() {
+  $.ajax({
+      type: 'GET',
+      url: '/car_app/charging',
+      timeout: 2000,
+      success: function(data) {
+        if ($('#ajax').length) {
+          $('#ajax').html(data);
+          window.setTimeout(update, 1000);
+        }
+      }
+    });
+  }
+  update();
+
