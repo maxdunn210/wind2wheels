@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :users
-  resources :cars
+  resources :users, :shallow => true do
+    resources :cars
+  end
+
   get 'utilities' => 'utilities#index'
   post 'utilities/change' => 'utilities#change'
 
