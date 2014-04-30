@@ -1,4 +1,7 @@
 class CarsController < ApplicationController
+
+  before_filter :authenticate_user!     # Devise
+
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
   # GET /cars
@@ -75,6 +78,7 @@ class CarsController < ApplicationController
 
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_car
       @car = Car.find(params[:id])
@@ -84,4 +88,5 @@ class CarsController < ApplicationController
     def car_params
       params.require(:car).permit(:name, :year, :make, :model, :color, :license_plate, :vin, :battery_kwh, :charging_rate_kw, :kwh_per_100_miles, :carwings_id, :carwings_password, :charge_end_time, :full_charge_time, :note)
     end
+
 end
