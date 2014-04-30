@@ -20,6 +20,10 @@
     %th
     %th
 
+  -#- puts "@cars.inspect => #{@cars.inspect}"
+  -#- puts "params #{params.inspect}"
+  - @cars = Car.all
+
   - @cars.each do |car|
     %tr
       %td= car.name
@@ -42,4 +46,4 @@
 
 %br
 
-= link_to 'New Car', new_car_path
+= link_to 'New Car', new_user_car_path(current_user.id)

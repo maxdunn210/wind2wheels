@@ -11,8 +11,9 @@
       / Collect the nav links, forms, and other content for toggling.
       #navbar-ex1-collapse.collapse.navbar-collapse.navbar-right
         %ul.nav.navbar-nav
-          %li
-            = link_to 'My Cars', root_path
+          - if user_signed_in?
+            %li
+              = link_to 'My Cars', user_cars_path(current_user.id)
           %li
             = link_to 'Wind Simulator', utilities_path
           %li

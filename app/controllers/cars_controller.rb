@@ -2,19 +2,19 @@ class CarsController < ApplicationController
 
   before_action :authenticate_user!     # Devise
 
-  before_action :set_user, only: [:index, :show, :edit, :update, :destroy]
+  before_action :set_user, only: [:index, :show, :create, :edit, :update, :destroy]
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.all
+    @cars = Car.where(:user_id => params[:user_id])
   end
 
   # GET /cars/1
   # GET /cars/1.json
   def show
-    @car = Car.first
+    #@car = Car.first
     @charging = true
   end
 
@@ -31,6 +31,7 @@ class CarsController < ApplicationController
   # POST /cars.json
   def create
     @car = Car.new(car_params)
+    @car.user_id = @user.id
 
     respond_to do |format|
       if @car.save
@@ -69,9 +70,9 @@ class CarsController < ApplicationController
   end
 
 
-  def index
-    @charging = true
-  end
+  #def index
+  #  @charging = true
+  #end
 
   def charging
     @charging = true
