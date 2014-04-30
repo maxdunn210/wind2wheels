@@ -2,6 +2,7 @@ class CarsController < ApplicationController
 
   before_action :authenticate_user!     # Devise
 
+  before_action :set_user, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
   # GET /cars
@@ -33,7 +34,8 @@ class CarsController < ApplicationController
 
     respond_to do |format|
       if @car.save
-        format.html { redirect_to @car, notice: 'Car was successfully created.' }
+        puts 'car save'
+        format.html { redirect_to car_path(@car), notice: 'Car was successfully created.' }
         format.json { render :show, status: :created, location: @car }
       else
         format.html { render :new }
@@ -83,6 +85,11 @@ class CarsController < ApplicationController
     def set_car
       @car = Car.find(params[:id])
     end
+
+    def set_user
+      @user = current_user
+    end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def car_params
