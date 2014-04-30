@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter :authenticate_user!     # Devise
+  before_action :authenticate_user!     # Devise
 
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
