@@ -55,9 +55,9 @@ group :test do
   gem 'launchy'                           # So you can do 'Then show me the page'
   gem 'autotest'
   gem 'turn', :require => false           # Pretty printed test output
-  # gem 'minitest'
+  gem 'minitest'
   # gem 'minitest', '=4.7.5'                # Version < 5.0 required to avoid Test:Unit conflict
-  # gem 'minitest-reporters', '>= 0.14.23'  # Required by RubyMine for 'minitest' gem
+  gem 'minitest-reporters', '>= 0.14.23'  # Required by RubyMine for 'minitest' gem
 end
 
 # Use ActiveModel has_secure_password
