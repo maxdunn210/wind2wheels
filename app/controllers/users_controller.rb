@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :authenticate_user!     # Devise
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -62,6 +65,7 @@ class UsersController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
@@ -71,4 +75,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :phone, :address, :city, :state, :zip)
     end
+
 end

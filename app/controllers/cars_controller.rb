@@ -1,16 +1,20 @@
 class CarsController < ApplicationController
+
+  before_action :authenticate_user!     # Devise
+
+  before_action :set_user, only: [:index, :show, :create, :edit, :update, :destroy]
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.all
+    @cars = Car.where(:user_id => params[:user_id])
   end
 
   # GET /cars/1
   # GET /cars/1.json
   def show
-    @car = Car.first
+    #@car = Car.first
     @charging = true
   end
 
@@ -27,10 +31,12 @@ class CarsController < ApplicationController
   # POST /cars.json
   def create
     @car = Car.new(car_params)
+    @car.user_id = @user.id
 
     respond_to do |format|
       if @car.save
-        format.html { redirect_to @car, notice: 'Car was successfully created.' }
+        puts 'car save'
+        format.html { redirect_to car_path(@car), notice: 'Car was successfully created.' }
         format.json { render :show, status: :created, location: @car }
       else
         format.html { render :new }
@@ -64,9 +70,9 @@ class CarsController < ApplicationController
   end
 
 
-  def index
-    @charging = true
-  end
+  #def index
+  #  @charging = true
+  #end
 
   def charging
     @charging = true
@@ -75,13 +81,20 @@ class CarsController < ApplicationController
 
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_car
       @car = Car.find(params[:id])
     end
 
+    def set_user
+      @user = current_user
+    end
+
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def car_params
       params.require(:car).permit(:name, :year, :make, :model, :color, :license_plate, :vin, :battery_kwh, :charging_rate_kw, :kwh_per_100_miles, :carwings_id, :carwings_password, :charge_end_time, :full_charge_time, :note)
     end
+
 end

@@ -4,4 +4,5 @@ class ApplicationController < ActionController::Base
 
   # MD Apr-2014 Turn this off for now because of ajax post
   # protect_from_forgery with: :exception
+
 end
